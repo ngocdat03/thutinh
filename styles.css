@@ -37,17 +37,19 @@ button:hover {
 /* Trái tim */
 .heart-container {
     position: absolute;
-    top: 10%; /* Vị trí trái tim từ trên cùng */
-    left: 10%; /* Vị trí trái tim từ bên trái */
-    z-index: 1; /* Đặt trái tim ở trên cùng */
+    top: 5%; /* Đặt trái tim gần trên cùng hơn */
+    left: 5%; /* Vị trí trái tim từ bên trái */
+    z-index: 2; /* Đặt trái tim ở trên bức thư */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    gap: 10px; /* Khoảng cách giữa các trái tim */
 }
 
 /* Trái tim */
 .heart {
-    width: 30px; /* Chiều rộng của trái tim */
-    height: 30px; /* Chiều cao của trái tim */
+    width: 25px; /* Chiều rộng của trái tim */
+    height: 25px; /* Chiều cao của trái tim */
     background-color: #ff4d4d; /* Màu của trái tim */
-    position: absolute;
+    position: relative; /* Để sử dụng absolute cho phần phụ */
     border-radius: 50%; /* Bo góc */
     transform: rotate(-45deg); /* Xoay trái tim */
     animation: moveHeart 5s infinite; /* Hoạt hình di chuyển */
@@ -57,8 +59,8 @@ button:hover {
 .heart::before,
 .heart::after {
     content: "";
-    width: 30px; /* Chiều rộng của trái tim */
-    height: 30px; /* Chiều cao của trái tim */
+    width: 25px; /* Chiều rộng của trái tim phụ */
+    height: 25px; /* Chiều cao của trái tim phụ */
     background-color: #ff4d4d; /* Màu của trái tim */
     border-radius: 50%; /* Bo góc */
     position: absolute;
@@ -66,37 +68,35 @@ button:hover {
 
 /* Trái tim phụ trên */
 .heart::before {
-    top: -15px; /* Vị trí trái tim phụ trên */
+    top: -12.5px; /* Vị trí trái tim phụ trên */
     left: 0;
 }
 
 /* Trái tim phụ bên phải */
 .heart::after {
-    left: 15px; /* Vị trí trái tim phụ bên phải */
+    left: 12.5px; /* Vị trí trái tim phụ bên phải */
     top: 0;
 }
 
 /* Hiệu ứng di chuyển cho trái tim */
 @keyframes moveHeart {
     0% {
-        transform: translateY(0); /* Bắt đầu ở vị trí gốc */
+        transform: translateY(0) rotate(-45deg); /* Bắt đầu ở vị trí gốc */
     }
     50% {
-        transform: translateY(-20px); /* Di chuyển lên trên */
+        transform: translateY(-10px) rotate(-45deg); /* Di chuyển lên trên */
     }
     100% {
-        transform: translateY(0); /* Trở về vị trí gốc */
+        transform: translateY(0) rotate(-45deg); /* Trở về vị trí gốc */
     }
 }
 
 /* Thêm trái tim ở vị trí khác nhau */
 .heart:nth-child(2) {
-    left: 50px; /* Vị trí trái tim thứ hai */
     animation-delay: 1s; /* Bắt đầu hoạt hình sau 1 giây */
 }
 
 .heart:nth-child(3) {
-    left: 100px; /* Vị trí trái tim thứ ba */
     animation-delay: 2s; /* Bắt đầu hoạt hình sau 2 giây */
 }
 
@@ -157,7 +157,7 @@ p {
     }
 
     .heart {
-        width: 20px; /* Giảm kích thước trái tim */
-        height: 20px; /* Giảm kích thước trái tim */
+        width: 20px; /* Kích thước trái tim nhỏ hơn cho màn hình nhỏ */
+        height: 20px; /* Kích thước trái tim nhỏ hơn cho màn hình nhỏ */
     }
 }
