@@ -1,0 +1,121 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center; /* Căn giữa cho nội dung trang index */
+    padding: 50px; /* Khoảng cách cho trang index */
+}
+
+h1 {
+    color: #d68f8f; /* Màu chữ tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+button {
+    padding: 10px 20px; /* Khoảng cách cho nút */
+    font-size: 16px; /* Kích thước chữ cho nút */
+    color: #fff; /* Màu chữ cho nút */
+    background-color: #d68f8f; /* Màu nền cho nút */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Con trỏ chuột khi rê vào nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+button:hover {
+    background-color: #c97d7d; /* Màu nền khi rê chuột vào nút */
+}
+
+.heart-container {
+    position: absolute;
+    top: 10%; /* Vị trí trái tim từ trên cùng */
+    left: 10%; /* Vị trí trái tim từ bên trái */
+    z-index: 1; /* Đặt trái tim ở trên cùng */
+}
+
+.heart {
+    width: 30px; /* Chiều rộng của trái tim */
+    height: 30px; /* Chiều cao của trái tim */
+    background-color: #ff4d4d; /* Màu của trái tim */
+    position: absolute;
+    border-radius: 50%; /* Bo góc */
+    transform: rotate(-45deg); /* Xoay trái tim */
+    animation: moveHeart 5s infinite; /* Hoạt hình di chuyển */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 30px; /* Chiều rộng của trái tim */
+    height: 30px; /* Chiều cao của trái tim */
+    background-color: #ff4d4d; /* Màu của trái tim */
+    border-radius: 50%; /* Bo góc */
+    position: absolute;
+}
+
+.heart::before {
+    top: -15px; /* Vị trí trái tim phụ trên */
+    left: 0;
+}
+
+.heart::after {
+    left: 15px; /* Vị trí trái tim phụ bên phải */
+    top: 0;
+}
+
+@keyframes moveHeart {
+    0% {
+        transform: translateY(0); /* Bắt đầu ở vị trí gốc */
+    }
+    50% {
+        transform: translateY(-20px); /* Di chuyển lên trên */
+    }
+    100% {
+        transform: translateY(0); /* Trở về vị trí gốc */
+    }
+}
+
+/* Thêm trái tim ở vị trí khác nhau */
+.heart:nth-child(2) {
+    left: 50px; /* Vị trí trái tim thứ hai */
+    animation-delay: 1s; /* Bắt đầu hoạt hình sau 1 giây */
+}
+
+.heart:nth-child(3) {
+    left: 100px; /* Vị trí trái tim thứ ba */
+    animation-delay: 2s; /* Bắt đầu hoạt hình sau 2 giây */
+}
+
+.envelope {
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.9); /* Màu nền của bức thư với độ trong suốt */
+    border: 2px solid #d68f8f; /* Viền bức thư */
+    border-radius: 15px; /* Bo góc */
+    padding: 20px; /* Khoảng cách trong bức thư */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    position: relative;
+    z-index: 1; /* Đặt bức thư ở trên cùng */
+    margin: 50px auto; /* Căn giữa bức thư */
+}
+
+.letter {
+    text-align: left; /* Căn trái chữ trong bức thư */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    padding: 20px; /* Khoảng cách trong bức thư */
+    background: rgba(255, 255, 255, 0.8); /* Gradient nền cho bức thư với độ trong suốt */
+    border-radius: 10px; /* Bo góc bức thư */
+    border: 1px solid #d6c9a9; /* Viền bức thư */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Đổ bóng cho bức thư */
+}
+
+h1 {
+    color: #d68f8f; /* Màu chữ tiêu đề */
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+}
+
+p {
+    color: #333; /* Màu chữ cho nội dung bức thư */
+    margin: 10px 0; /* Khoảng cách trên và dưới cho đoạn văn */
+}
