@@ -1,18 +1,23 @@
+/* Thiết lập chung cho toàn bộ trang */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
+    background: linear-gradient(to right, #f0f8ff, #ffe0e0); /* Gradient nền */
 }
 
+/* Container cho trang index */
 .container {
-    text-align: center; /* Căn giữa cho nội dung trang index */
+    text-align: center; /* Căn giữa nội dung trang index */
     padding: 50px; /* Khoảng cách cho trang index */
 }
 
+/* Tiêu đề */
 h1 {
     color: #d68f8f; /* Màu chữ tiêu đề */
     margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
 }
 
+/* Nút */
 button {
     padding: 10px 20px; /* Khoảng cách cho nút */
     font-size: 16px; /* Kích thước chữ cho nút */
@@ -24,10 +29,12 @@ button {
     transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
 }
 
+/* Hiệu ứng hover cho nút */
 button:hover {
     background-color: #c97d7d; /* Màu nền khi rê chuột vào nút */
 }
 
+/* Trái tim */
 .heart-container {
     position: absolute;
     top: 10%; /* Vị trí trái tim từ trên cùng */
@@ -35,6 +42,7 @@ button:hover {
     z-index: 1; /* Đặt trái tim ở trên cùng */
 }
 
+/* Trái tim */
 .heart {
     width: 30px; /* Chiều rộng của trái tim */
     height: 30px; /* Chiều cao của trái tim */
@@ -45,6 +53,7 @@ button:hover {
     animation: moveHeart 5s infinite; /* Hoạt hình di chuyển */
 }
 
+/* Trái tim phụ */
 .heart::before,
 .heart::after {
     content: "";
@@ -55,16 +64,19 @@ button:hover {
     position: absolute;
 }
 
+/* Trái tim phụ trên */
 .heart::before {
     top: -15px; /* Vị trí trái tim phụ trên */
     left: 0;
 }
 
+/* Trái tim phụ bên phải */
 .heart::after {
     left: 15px; /* Vị trí trái tim phụ bên phải */
     top: 0;
 }
 
+/* Hiệu ứng di chuyển cho trái tim */
 @keyframes moveHeart {
     0% {
         transform: translateY(0); /* Bắt đầu ở vị trí gốc */
@@ -88,6 +100,7 @@ button:hover {
     animation-delay: 2s; /* Bắt đầu hoạt hình sau 2 giây */
 }
 
+/* Bức thư phong bì */
 .envelope {
     width: 500px;
     background-color: rgba(255, 255, 255, 0.9); /* Màu nền của bức thư với độ trong suốt */
@@ -100,6 +113,7 @@ button:hover {
     margin: 50px auto; /* Căn giữa bức thư */
 }
 
+/* Nội dung bức thư */
 .letter {
     text-align: left; /* Căn trái chữ trong bức thư */
     line-height: 1.6; /* Khoảng cách giữa các dòng */
@@ -110,12 +124,40 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Đổ bóng cho bức thư */
 }
 
+/* Tiêu đề trong bức thư */
 h1 {
     color: #d68f8f; /* Màu chữ tiêu đề */
     margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
 }
 
+/* Nội dung bức thư */
 p {
     color: #333; /* Màu chữ cho nội dung bức thư */
     margin: 10px 0; /* Khoảng cách trên và dưới cho đoạn văn */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Giảm padding cho màn hình nhỏ */
+    }
+
+    .envelope {
+        width: 90%; /* Đặt bức thư chiếm 90% chiều rộng màn hình */
+        margin: 20px auto; /* Giảm margin cho bức thư */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Kích thước chữ nhỏ hơn cho tiêu đề */
+    }
+
+    button {
+        font-size: 14px; /* Kích thước chữ nhỏ hơn cho nút */
+        padding: 8px 16px; /* Giảm padding cho nút */
+    }
+
+    .heart {
+        width: 20px; /* Giảm kích thước trái tim */
+        height: 20px; /* Giảm kích thước trái tim */
+    }
 }
